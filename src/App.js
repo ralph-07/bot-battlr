@@ -11,7 +11,7 @@ function App() {
   const [bots, setBots] = useState([]);
   const [army, setArmy] = useState([]);
 
-  // Fetch data
+  
   useEffect(() => {
     fetch("http://localhost:8001/bots")
       .then((res) => res.json())
@@ -19,7 +19,7 @@ function App() {
       .catch((err) => console.error("Error fetching bots:", err));
   }, []);
 
-  // Add bot to army
+
   const enlistBot = (bot) => {
     if (!army.find((b) => b.id === bot.id)) {
       setArmy([...army, bot]);
